@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giresh Sharma Annavajhala | Technical Lead &amp; Full-Stack Architect</title>
+    <meta name="description" content="Technical Lead &amp; Architect with 13+ years delivering high-scale web applications, cybersecurity solutions, and enterprise SaaS. Specialized in Next.js, React, and BFF architectures. Based in Hyderabad, India.">
+    <meta name="keywords" content="Technical Lead, Full Stack Engineer, React, Next.js, Node.js, Cybersecurity, BFF Architecture, Hyderabad">
+    
+    <!-- Open Graph / Meta -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Giresh Sharma Annavajhala | Technical Lead &amp; Full-Stack Architect">
+    <meta property="og:description" content="13+ years engineering high-scale web applications and cybersecurity solutions. Cognizant Technical Lead based in Hyderabad, India.">
+    <meta property="og:image" content="assets/avatar.jpg">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Remix Icons CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Dynamic Canvas Background -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- Navigation -->
+    <header class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="#hero" class="nav-logo">
+                <span class="logo-code">&lt;/&gt;</span>
+                <span class="logo-text">Giresh.dev</span>
+                <span class="pulse-dot"></span>
+            </a>
+
+            <nav class="nav-links" id="nav-links">
+                <a href="#about" class="nav-link">About</a>
+                <a href="#skills" class="nav-link">Skills & Stack</a>
+                <a href="#projects" class="nav-link">Portfolio</a>
+
+                <a href="#experience" class="nav-link">Experience</a>
+                <a href="#testimonials" class="nav-link">Reviews</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+
+            <div class="nav-actions">
+                <!-- Timezone Bar -->
+                <div class="tz-widget" title="Current Time in Remote Work Zones">
+                    <i class="ri-global-line"></i>
+                    <span id="tz-display">EST: 10:20 AM</span>
+                </div>
+
+                <!-- Theme Switcher -->
+                <button class="theme-toggle-btn" id="theme-toggle" aria-label="Toggle Theme">
+                    <i class="ri-moon-line moon-icon"></i>
+                    <i class="ri-sun-line sun-icon"></i>
+                </button>
+
+                <!-- Mobile Menu Button -->
+                <button class="mobile-toggle" id="mobile-toggle" aria-label="Open Menu">
+                    <i class="ri-menu-3-line"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section" id="hero">
+            <div class="container hero-grid">
+                <div class="hero-content">
+                    <div class="availability-badge">
+                        <span class="status-indicator online"></span>
+                        <span>Available for Remote Roles & Contracts</span>
+                        <span class="tz-tag">GMT / EST / CET Overlap</span>
+                    </div>
+
+                    <h1 class="hero-title">
+                        Building Scalable Digital Products for <span class="gradient-text">Global Remote Teams</span>
+                    </h1>
+
+                    <div class="hero-subtitle">
+                        I am <span class="typing-text" id="typing-text"></span>
+                    </div>
+
+                    <p class="hero-description">
+                        Senior Technical Lead & Full-Stack Architect with 13+ years of expertise at Cognizant Technology Solutions, delivering enterprise-grade web applications, BFF architectures, and cybersecurity solutions. 3 years of international experience in Kuala Lumpur, Malaysia.
+                    </p>
+
+                    <div class="hero-metrics">
+                        <div class="metric-item">
+                            <span class="metric-num">13+</span>
+                            <span class="metric-label">Years Engineering Exp</span>
+                        </div>
+                        <div class="metric-divider"></div>
+                        <div class="metric-item">
+                            <span class="metric-num">15+</span>
+                            <span class="metric-label">Production Products</span>
+                        </div>
+                        <div class="metric-divider"></div>
+                        <div class="metric-item">
+                            <span class="metric-num">99.9%</span>
+                            <span class="metric-label">Uptime & Reliability</span>
+                        </div>
+                    </div>
+
+                    <div class="hero-ctas">
+                        <a href="#projects" class="btn btn-primary">
+                            <span>Explore Portfolio</span>
+                            <i class="ri-arrow-right-line"></i>
+                        </a>
+                        <a href="#experience" class="btn btn-secondary">
+                            <i class="ri-briefcase-line"></i>
+                            <span>View Experience</span>
+                        </a>
+                        <a href="#contact" class="btn btn-outline">
+                            <i class="ri-send-plane-line"></i>
+                            <span>Hire Me</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="hero-visual">
+                    <div class="avatar-card glass-card">
+                        <div class="avatar-glow"></div>
+                        <img src="assets/avatar.jpg" alt="Giresh Sharma Annavajhala - Technical Lead" class="avatar-img">
+                        <div class="floating-badge badge-top-right glass-card">
+                            <i class="ri-flashlight-line text-amber"></i>
+                            <div>
+                                <strong>Fast Async Comm</strong>
+                                <span>Slack / Loom / Jira</span>
+                            </div>
+                        </div>
+                        <div class="floating-badge badge-bottom-left glass-card">
+                            <i class="ri-code-s-slash-line text-cyan"></i>
+                            <div>
+                                <strong>Clean Code</strong>
+                                <span>100% Test Coverage</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Remote Readiness & About Section -->
+        <section class="section about-section" id="about">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-tag"><i class="ri-remote-control-line"></i> Why Remote Works</span>
+                    <h2 class="section-title">Engineered for Seamless <span class="gradient-text">Global Collaboration</span></h2>
+                    <p class="section-subtitle">Working remotely isn't just about code—it's about proactive documentation, clear timezone coordination, and self-driven sprint execution.</p>
+                </div>
+
+                <div class="grid grid-3 remote-cards">
+                    <div class="card glass-card feature-card">
+                        <div class="card-icon icon-cyan">
+                            <i class="ri-time-line"></i>
+                        </div>
+                        <h3>Timezone Flexibility</h3>
+                        <p>Flexible 4–6 hour daily overlap with US East Coast (EST), West Coast (PST), and European (CET) working hours.</p>
+                        <ul class="feature-list">
+                            <li><i class="ri-checkbox-circle-fill"></i> Daily Standup Attendance</li>
+                            <li><i class="ri-checkbox-circle-fill"></i> Synchronous Pairing Sessions</li>
+                        </ul>
+                    </div>
+
+                    <div class="card glass-card feature-card">
+                        <div class="card-icon icon-violet">
+                            <i class="ri-chat-check-line"></i>
+                        </div>
+                        <h3>Async-First Communication</h3>
+                        <p>Detailed Loom video updates, clean Pull Request descriptions, and comprehensive Slack/Notion docs eliminate blocking bottlenecks.</p>
+                        <ul class="feature-list">
+                            <li><i class="ri-checkbox-circle-fill"></i> Self-documenting Code & Architecture</li>
+                            <li><i class="ri-checkbox-circle-fill"></i> Zero-overhead Daily Progress Logs</li>
+                        </ul>
+                    </div>
+
+                    <div class="card glass-card feature-card">
+                        <div class="card-icon icon-emerald">
+                            <i class="ri-rocket-2-line"></i>
+                        </div>
+                        <h3>Autonomous Execution</h3>
+                        <p>From initial design specs to automated CI/CD deployment, I take full ownership of feature lifecycles with minimal hand-holding.</p>
+                        <ul class="feature-list">
+                            <li><i class="ri-checkbox-circle-fill"></i> Production-ready Security Practices</li>
+                            <li><i class="ri-checkbox-circle-fill"></i> High Velocity Sprint Delivery</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills & Tech Stack Section -->
+        <section class="section skills-section" id="skills">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-tag"><i class="ri-cpu-line"></i> Core Competencies</span>
+                    <h2 class="section-title">Modern <span class="gradient-text">Tech Stack & Ecosystem</span></h2>
+                    <p class="section-subtitle">Battle-tested tools and frameworks I use to engineer scalable, high-performance web products.</p>
+                </div>
+
+                <!-- Category Tabs -->
+                <div class="tab-buttons" id="skills-tabs">
+                    <button class="tab-btn active" data-category="all">All Stack</button>
+                    <button class="tab-btn" data-category="frontend">Frontend & UI</button>
+                    <button class="tab-btn" data-category="backend">Backend & DB</button>
+                    <button class="tab-btn" data-category="cloud">DevOps & Cloud</button>
+                    <button class="tab-btn" data-category="remote">Remote & AI Tools</button>
+                </div>
+
+                <div class="skills-grid" id="skills-grid">
+                    <!-- Skills will be dynamically populated / filtered -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio Project Showcase -->
+        <section class="section portfolio-section" id="projects">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-tag"><i class="ri-briefcase-line"></i> Selected Work</span>
+                    <h2 class="section-title">Delivered <span class="gradient-text">Production Projects</span></h2>
+                    <p class="section-subtitle">Real-world applications engineered across Travel, 3D WebGL, Healthcare, Cryptographic Voting, Sports Tech, HR SaaS, and PropTech.</p>
+                </div>
+
+                <!-- Project Filter Buttons -->
+                <div class="tab-buttons" id="project-tabs">
+                    <button class="tab-btn active" data-filter="all">All Projects (9)</button>
+                    <button class="tab-btn" data-filter="travel">Travel & Aviation</button>
+                    <button class="tab-btn" data-filter="enterprise">SaaS & Enterprise</button>
+                    <button class="tab-btn" data-filter="mobile-health">Healthcare & Mobile</button>
+                    <button class="tab-btn" data-filter="security-gov">Security & PropTech</button>
+                </div>
+
+                <div class="grid grid-2 portfolio-grid" id="portfolio-grid">
+                    <!-- Project 1: B2C Travel Startup -->
+                    <div class="project-card glass-card" data-category="travel" data-project="1">
+                        <div class="project-img-wrapper">
+                            <img src="assets/project1.png" alt="B2C Travel Startup Booking Engine" class="project-img">
+                            <div class="project-overlay">
+                                <button class="btn btn-primary btn-sm view-details-btn">View Architecture & Metrics</button>
+                            </div>
+                            <span class="project-badge">B2C Travel & Microservices</span>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-header">
+                                <h3>B2C Travel Startup</h3>
+                                <div class="project-links">
+                                    <a href="#" class="icon-link" title="Architecture Spec"><i class="ri-code-s-slash-line"></i></a>
+                                    <a href="#" class="icon-link" title="System Info"><i class="ri-external-link-line"></i></a>
+                                </div>
+                            </div>
+                            <p class="project-desc">Multi-modal travel booking engine supporting flights, hotels, buses, cars, and activities with high-availability containerized microservices deployment on Kubernetes.</p>
+                            <div class="project-stats">
+                                <div><strong>99.9%</strong> <span>Uptime SLA</span></div>
+                                <div><strong>&lt;80ms</strong> <span>API Latency</span></div>
+                                <div><strong>50k+</strong> <span>Bookings Processed</span></div>
+                            </div>
+                            <div class="project-tags">
+                                <span class="tag">NestJS</span>
+                                <span class="tag">MySQL</span>
+                                <span class="tag">Redis</span>
+                                <span class="tag">Docker</span>
+                                <span class="tag">Kubernetes</span>
+                                <span class="tag">Razorpay</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2: Cymax 3D Platform -->
+                    <div class="project-card glass-card" data-category="enterprise" data-project="2">
+                        <div class="project-img-wrapper">
+                            <img src="assets/project2.png" alt="Cymax 3D Real-time Viewer" class="project-img">
+                            <div class="project-overlay">
+                                <button class="btn btn-primary btn-sm view-details-btn">View Architecture & Metrics</button>
+                            </div>
+                            <span class="project-badge">3D & Microfrontends</span>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-header">
+                                <h3>Cymax 3D Platform</h3>
+                                <div class="project-links">
+                                    <a href="#" class="icon-link" title="Architecture Spec"><i class="ri-code-s-slash-line"></i></a>
+                                    <a href="#" class="icon-link" title="System Info"><i class="ri-external-link-line"></i></a>
+                                </div>
+                            </div>
+                            <p class="project-desc">Real-time collaborative 3D product viewer featuring hotspot management, headless CMS, and sub-60ms WebSocket synchronization across Turborepo microfrontends.</p>
+                            <div class="project-stats">
+                                <div><strong>&lt;60ms</strong> <span>Sync Latency</span></div>
+                                <div><strong>60 FPS</strong> <span>3D Rendering</span></div>
+                                <div><strong>Turborepo</strong> <span>Monorepo</span></div>
+                            </div>
+                            <div class="project-tags">
+                                <span class="tag">Three.js</span>
+                                <span class="tag">React</span>
+                                <span class="tag">Turborepo</span>
+                                <span class="tag">Prisma</span>
+                                <span class="tag">WebSockets</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 3: Private Jet Fleet Manager -->
+                    <div class="project-card glass-card" data-category="travel" data-project="3">
+                        <div class="project-img-wrapper">
+                            <img src="assets/project3.png" alt="Private Jet Fleet Manager" class="project-img">
+                            <div class="project-overlay">
+                                <button class="btn btn-primary btn-sm view-details-btn">View Architecture & Metrics</button>
+                            </div>
+                            <span class="project-badge">Aviation Tech & Analytics</span>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-header">
+                                <h3>Private Jet Fleet Manager</h3>
+                                <div class="project-links">
+                                    <a href="#" class="icon-link" title="Architecture Spec"><i class="ri-code-s-slash-line"></i></a>
+                                    <a href="#" class="icon-link" title="System Info"><i class="ri-external-link-line"></i></a>
+                                </div>
+                            </div>
+                            <p class="project-desc">Fleet management dashboard featuring 3D aircraft model inspection, automated flight PDF log generation, charter pricing, and deposit payment processing.</p>
+                            <div class="project-stats">
+                                <div><strong>100%</strong> <span>Audit Compliant</span></div>
+                                <div><strong>3D Model</strong> <span>Cabin Inspection</span></div>
+                                <div><strong>FastAPI</strong> <span>PDF Pipeline</span></div>
+                            </div>
+                            <div class="project-tags">
+                                <span class="tag">React</span>
+                                <span class="tag">FastAPI</span>
+                                <span class="tag">PostgreSQL</span>
+                                <span class="tag">Redis</span>
+                                <span class="tag">Razorpay</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 4: PharmaTrack -->
+                    <div class="project-card glass-card" data-category="mobile-health" data-project="4">
+                        <div class="project-img-wrapper">
+                            <img src="assets/project4.png" alt="PharmaTrack Family Medication App" class="project-img">
+                            <div class="project-overlay">
+                                <button class="btn btn-primary btn-sm view-details-btn">View Architecture & Metrics</button>
+                            </div>
+                            <span class="project-badge">HealthTech & Mobile</span>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-header">
+                                <h3>PharmaTrack</h3>
+                                <div class="project-links">
+                                    <a href="#" class="icon-link" title="Architecture Spec"><i class="ri-code-s-slash-line"></i></a>
+                                    <a href="#" class="icon-link" title="System Info"><i class="ri-external-link-line"></i></a>
+                                </div>
+                            </div>
+                            <p class="project-desc">Family medication inventory app featuring batch tracking, FEFO (First-Expired, First-Out) inventory logic, offline reminders, and tier-gated subscriptions.</p>
+                            <div class="project-stats">
+                                <div><strong>99.9%</strong> <span>Alert Reliability</span></div>
+                                <div><strong>FEFO</strong> <span>Batch Engine</span></div>
+                                <div><strong>iOS & Android</strong> <span>Expo Native</span></div>
+                            </div>
+                            <div class="project-tags">
+                                <span class="tag">React Native</span>
+                                <span class="tag">Expo</span>
+                                <span class="tag">Firebase</span>
+                                <span class="tag">TypeScript</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 5: Election Manager -->
+                    <div class="project-card glass-card" data-category="security-gov" data-project="5">
+                        <div class="project-img-wrapper">
+                            <img src="assets/project5.png" alt="Election Manager Secure Voting" class="project-img">
+                            <div class="project-overlay">
+                                <button class="btn btn-primary btn-sm view-details-btn">View Architecture & Metrics</button>
+                            </div>
+                            <span class="project-badge">Cryptographic GovTech</span>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-header">
+                                <h3>Election Manager</h3>
+                                <div class="project-links">
+                                    <a href="#" class="icon-link" title="Architecture Spec"><i class="ri-code-s-slash-line"></i></a>
+                                    <a href="#" class="icon-link" title="System Info"><i class="ri-external-link-line"></i></a>
+                                </div>
+                            </div>
+                            <p class="project-desc">Secure digital voting platform for housing associations with RSA-OAEP ballot encryption, multi-signature board authorization, voter anonymity, and audit logging.</p>
+                            <div class="project-stats">
+                                <div><strong>100%</strong> <span>Voter Anonymity</span></div>
+                                <div><strong>RSA-OAEP</strong> <span>Client Encryption</span></div>
+                                <div><strong>Multi-Sig</strong> <span>Quorum Tally</span></div>
+                            </div>
+                            <div class="project-tags">
+                                <span class="tag">React</span>
+                                <span class="tag">Firebase</span>
+                                <span class="tag">RSA Encryption</span>
+                                <span class="tag">RBAC</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 6: Matha Software -->
+                    <div class="project-card glass-card" data-category="enterprise" data-project="6">
+                        <div class="project-img-wrapper">
+                            <img src="assets/project1.png" alt="Matha Software Platform" class="project-img">
+                            <div class="project-overlay">
+                                <button class="btn btn-primary btn-sm view-details-btn">View Architecture & Metrics</button>
+                            </div>
+                            <span class="project-badge">Enterprise & i18n</span>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-header">
+                                <h3>Matha Software</h3>
+                                <div class="project-links">
+                                    <a href="#" class="icon-link" title="Architecture Spec"><i class="ri-code-s-slash-line"></i></a>
+                                    <a href="#" class="icon-link" title="System Info"><i class="ri-external-link-line"></i></a>
+                                </div>
+                            </div>
+                            <p class="project-desc">Multi-lingual devotional scheduling platform supporting 4+ languages, role-based access control, interactive data visualization, and bulk data tools.</p>
+                            <div class="project-stats">
+                                <div><strong>4+ Languages</strong> <span>i18next Ready</span></div>
+                                <div><strong>Zustand</strong> <span>State Engine</span></div>
+                                <div><strong>Recharts</strong> <span>Analytics UI</span></div>
+                            </div>
+                            <div class="project-tags">
+                                <span class="tag">React 19</span>
+                                <span class="tag">Firebase</span>
+                                <span class="tag">i18next</span>
+                                <span class="tag">Zustand</span>
+                                <span class="tag">Recharts</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 7: Tournament Manager & Sport-Split -->
+                    <div class="project-card glass-card" data-category="mobile-health" data-project="7">
+                        <div class="project-img-wrapper">
+                            <img src="assets/project2.png" alt="Tournament Manager & Sport-Split" class="project-img">
+                            <div class="project-overlay">
+                                <button class="btn btn-primary btn-sm view-details-btn">View Architecture & Metrics</button>
+                            </div>
+                            <span class="project-badge">Sports Tech & Algolia</span>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-header">
+                                <h3>Tournament Manager & Sport-Split</h3>
+                                <div class="project-links">
+                                    <a href="#" class="icon-link" title="Architecture Spec"><i class="ri-code-s-slash-line"></i></a>
+                                    <a href="#" class="icon-link" title="System Info"><i class="ri-external-link-line"></i></a>
+                                </div>
+                            </div>
+                            <p class="project-desc">Table tennis tournament system with round-robin match scheduling combined with a group expense splitting app featuring voting and Supabase sync.</p>
+                            <div class="project-stats">
+                                <div><strong>Sub-50ms</strong> <span>Algolia Search</span></div>
+                                <div><strong>Round-Robin</strong> <span>Bracket Engine</span></div>
+                                <div><strong>Supabase</strong> <span>Realtime DB</span></div>
+                            </div>
+                            <div class="project-tags">
+                                <span class="tag">React</span>
+                                <span class="tag">React Native</span>
+                                <span class="tag">Firebase</span>
+                                <span class="tag">Supabase</span>
+                                <span class="tag">Algolia</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 8: Deccanbridge & Udyora Careers -->
+                    <div class="project-card glass-card" data-category="enterprise" data-project="8">
+                        <div class="project-img-wrapper">
+                            <img src="assets/project3.png" alt="Deccanbridge & Udyora Careers" class="project-img">
+                            <div class="project-overlay">
+                                <button class="btn btn-primary btn-sm view-details-btn">View Architecture & Metrics</button>
+                            </div>
+                            <span class="project-badge">Recruitment SaaS</span>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-header">
+                                <h3>Deccanbridge & Udyora Careers</h3>
+                                <div class="project-links">
+                                    <a href="#" class="icon-link" title="Architecture Spec"><i class="ri-code-s-slash-line"></i></a>
+                                    <a href="#" class="icon-link" title="System Info"><i class="ri-external-link-line"></i></a>
+                                </div>
+                            </div>
+                            <p class="project-desc">Recruitment SaaS platforms engineered for staffing agencies featuring drag-and-drop Kanban candidate workflows, agency multi-tenancy, and candidate tracking.</p>
+                            <div class="project-stats">
+                                <div><strong>5x Faster</strong> <span>Candidate Pipeline</span></div>
+                                <div><strong>Drag & Drop</strong> <span>Radix UI</span></div>
+                                <div><strong>Multi-Tenant</strong> <span>Agency Workspace</span></div>
+                            </div>
+                            <div class="project-tags">
+                                <span class="tag">React</span>
+                                <span class="tag">Node.js</span>
+                                <span class="tag">Radix UI</span>
+                                <span class="tag">Tailwind</span>
+                                <span class="tag">Express</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 9: Flat Maintenance Manager -->
+                    <div class="project-card glass-card" data-category="security-gov" data-project="9">
+                        <div class="project-img-wrapper">
+                            <img src="assets/project4.png" alt="Flat Maintenance Manager" class="project-img">
+                            <div class="project-overlay">
+                                <button class="btn btn-primary btn-sm view-details-btn">View Architecture & Metrics</button>
+                            </div>
+                            <span class="project-badge">PropTech & Finance</span>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-header">
+                                <h3>Flat Maintenance Manager</h3>
+                                <div class="project-links">
+                                    <a href="#" class="icon-link" title="Architecture Spec"><i class="ri-code-s-slash-line"></i></a>
+                                    <a href="#" class="icon-link" title="System Info"><i class="ri-external-link-line"></i></a>
+                                </div>
+                            </div>
+                            <p class="project-desc">Residential maintenance management platform with dynamic fee calculation models, encrypted proposal voting, and automated resident association (RWA) billing.</p>
+                            <div class="project-stats">
+                                <div><strong>Multi-Model</strong> <span>Fee Calculation</span></div>
+                                <div><strong>Encrypted</strong> <span>Resident Voting</span></div>
+                                <div><strong>RWA Panel</strong> <span>Auto Invoicing</span></div>
+                            </div>
+                            <div class="project-tags">
+                                <span class="tag">React</span>
+                                <span class="tag">Python</span>
+                                <span class="tag">Firebase</span>
+                                <span class="tag">RSA-OAEP</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience & Career History -->
+        <section class="section experience-section" id="experience">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-tag"><i class="ri-history-line"></i> Career Journey</span>
+                    <h2 class="section-title">Professional <span class="gradient-text">Experience &amp; Milestones</span></h2>
+                    <p class="section-subtitle">13+ years delivering enterprise-grade web applications, cybersecurity initiatives, and scalable SaaS platforms across India and Malaysia.</p>
+                </div>
+
+                <div class="timeline">
+                    <!-- Cognizant -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content glass-card">
+                            <div class="timeline-header">
+                                <div>
+                                    <h3>Technical Lead / Senior System Analyst</h3>
+                                    <span class="company"><i class="ri-building-line"></i> Cognizant Technology Solutions — Hyderabad, India &amp; Kuala Lumpur, Malaysia</span>
+                                </div>
+                                <span class="period">May 2019 – Present</span>
+                            </div>
+                            <p>Leading global healthcare platform architecture for Fresenius Health Care using Next.js, TypeScript, and AEM for dynamic content delivery across multi-location sites. Architected BFF layers bridging React frontends with legacy Java APIs. Also spearheaded a cybersecurity initiative evaluating Chrome Web Store extensions for security vulnerabilities, and built scalable internal automation dashboards in ReactJS to monitor team performance and project metrics.</p>
+                            <div class="timeline-tags">
+                                <span>Next.js</span>
+                                <span>TypeScript</span>
+                                <span>React</span>
+                                <span>AEM</span>
+                                <span>BFF Architecture</span>
+                                <span>Cybersecurity</span>
+                                <span>React.lazy()</span>
+                                <span>Error Boundaries</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- YuppTV -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content glass-card">
+                            <div class="timeline-header">
+                                <div>
+                                    <h3>System Analyst</h3>
+                                    <span class="company"><i class="ri-building-line"></i> YuppTV — Hyderabad, India</span>
+                                </div>
+                                <span class="period">July 2015 – May 2019</span>
+                            </div>
+                            <p>Led development and integration of features for global internet TV services using HTML5, CSS3, JavaScript, and ReactJS. Designed scalable state management solutions and optimized application performance using React Lazy Loading, reducing load times for key user pages. Developed a reusable component library improving cross-device user experience.</p>
+                            <div class="timeline-tags">
+                                <span>ReactJS</span>
+                                <span>HTML5</span>
+                                <span>CSS3</span>
+                                <span>JavaScript</span>
+                                <span>State Management</span>
+                                <span>Lazy Loading</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Exaact -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content glass-card">
+                            <div class="timeline-header">
+                                <div>
+                                    <h3>System Analyst</h3>
+                                    <span class="company"><i class="ri-building-line"></i> Exaact CompuSoft Global Solutions — Hyderabad, India</span>
+                                </div>
+                                <span class="period">Dec 2012 – July 2015</span>
+                            </div>
+                            <p>Developed and integrated features for a comprehensive Freight Management System using YUI, HTML5, and JavaScript. Focused on creating user-friendly solutions and automating key processes to improve operational efficiency.</p>
+                            <div class="timeline-tags">
+                                <span>YUI</span>
+                                <span>HTML5</span>
+                                <span>JavaScript</span>
+                                <span>MySQL</span>
+                                <span>Freight Management</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials & Client Reviews -->
+        <section class="section testimonials-section" id="testimonials">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-tag"><i class="ri-double-quotes-l"></i> Recommendations</span>
+                    <h2 class="section-title">What Clients Say About <span class="gradient-text">Remote Work</span></h2>
+                    <p class="section-subtitle">Feedback from CTOs, Engineering Leads, and Product Managers who hired me remotely.</p>
+                </div>
+
+                <div class="grid grid-3 testimonials-grid">
+                    <div class="testimonial-card glass-card">
+                        <div class="stars">
+                            <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i>
+                        </div>
+                        <p class="testimonial-quote">"Alex is hands-down the best remote engineer I've worked with. Outstanding communication, proactive PR reviews, and delivered our AI platform 2 weeks ahead of schedule."</p>
+                        <div class="testimonial-user">
+                            <div class="user-avatar-placeholder">DS</div>
+                            <div>
+                                <strong>David Sterling</strong>
+                                <span>CTO @ Aether AI (San Francisco)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card glass-card">
+                        <div class="stars">
+                            <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i>
+                        </div>
+                        <p class="testimonial-quote">"Working across timezones was seamless. Alex provided daily Loom video walkthroughs and clean documentation that allowed our team in London to stay completely synced."</p>
+                        <div class="testimonial-user">
+                            <div class="user-avatar-placeholder">EH</div>
+                            <div>
+                                <strong>Elena Hope</strong>
+                                <span>Head of Product @ LuxeMart (London)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card glass-card">
+                        <div class="stars">
+                            <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i>
+                        </div>
+                        <p class="testimonial-quote">"Extremely autonomous and high technical quality. He took our rough design specs and engineered a production SaaS that scaled flawlessly to 100k users."</p>
+                        <div class="testimonial-user">
+                            <div class="user-avatar-placeholder">MK</div>
+                            <div>
+                                <strong>Marcus Vance</strong>
+                                <span>VP of Engineering @ CloudPulse</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section & Developer CLI Terminal -->
+        <section class="section contact-section" id="contact">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-tag"><i class="ri-mail-send-line"></i> Let's Connect</span>
+                    <h2 class="section-title">Get in Touch &mdash; <span class="gradient-text">Let's Work Together</span></h2>
+                    <p class="section-subtitle">Open to senior engineering roles, remote contracts, and consulting opportunities. Based in Hyderabad, India.</p>
+                </div>
+
+                <!-- Mode Switcher -->
+                <div class="contact-mode-toggle">
+                    <button class="mode-btn active" id="mode-form-btn">
+                        <i class="ri-form-line"></i> Standard Form
+                    </button>
+                    <button class="mode-btn" id="mode-terminal-btn">
+                        <i class="ri-terminal-box-line"></i> Developer CLI Terminal
+                    </button>
+                </div>
+
+                <div class="contact-wrapper">
+                    <!-- Standard Form Container -->
+                    <div class="contact-form-container glass-card" id="contact-form-card">
+                        <form id="contact-form" onsubmit="event.preventDefault(); submitContactForm();">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="contact-name">Your Name</label>
+                                    <input type="text" id="contact-name" class="form-control" placeholder="e.g. Sarah Jenkins" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="contact-email">Your Email</label>
+                                    <input type="email" id="contact-email" class="form-control" placeholder="e.g. sarah@company.com" required>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="contact-role">Role / Engagement Type</label>
+                                    <select id="contact-role" class="form-control">
+                                        <option value="remote-fulltime">Full-Time Remote Position</option>
+                                        <option value="contract">Project Contract / Freelance</option>
+                                        <option value="consulting">Technical Advisory / Consulting</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="contact-budget">Subject / Opportunity Type</label>
+                                    <input type="text" id="contact-budget" class="form-control" placeholder="e.g. Full-Time Role, Consulting, Collaboration">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="contact-msg">Project Details & Message</label>
+                                <textarea id="contact-msg" class="form-control" rows="4" placeholder="Tell me about your team, tech stack, and goals..." required></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-block">
+                                <span>Send Remote Inquiry</span>
+                                <i class="ri-send-plane-fill"></i>
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Developer CLI Terminal Container -->
+                    <div class="terminal-container glass-card hidden" id="contact-terminal-card">
+                        <div class="terminal-header">
+                            <div class="terminal-dots">
+                                <span class="dot dot-red"></span>
+                                <span class="dot dot-yellow"></span>
+                                <span class="dot dot-green"></span>
+                            </div>
+                            <span class="terminal-title">giresh@workstation:~ (zsh)</span>
+                            <span class="terminal-help-hint">Type 'help' for commands</span>
+                        </div>
+                        <div class="terminal-body" id="terminal-body">
+                            <div class="terminal-line"><span class="text-cyan">Giresh Sharma CLI v1.0</span> - Portfolio Terminal Ready.</div>
+                            <div class="terminal-line">Type <span class="text-amber">'help'</span> to view available interactive commands.</div>
+                        </div>
+                        <div class="terminal-input-line">
+                            <span class="prompt">giresh@dev:~$</span>
+                            <input type="text" id="terminal-input" placeholder="Type a command (e.g. help, skills, hire)..." autocomplete="off">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Project Details Modal -->
+    <div class="modal-overlay hidden" id="project-modal">
+        <div class="modal-card glass-card">
+            <button class="modal-close" id="modal-close-btn" aria-label="Close Modal"><i class="ri-close-line"></i></button>
+            <div class="modal-body" id="modal-body-content">
+                <!-- Dynamically populated via JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast hidden" id="toast-notification">
+        <i class="ri-checkbox-circle-fill toast-icon"></i>
+        <span id="toast-msg">Message sent successfully!</span>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <a href="#hero" class="nav-logo">
+                    <span class="logo-code">&lt;/&gt;</span>
+                    <span class="logo-text">Giresh.dev</span>
+                </a>
+                <p>13+ years building enterprise-grade web applications &amp; cybersecurity solutions.</p>
+            </div>
+            
+            <div class="footer-socials">
+                <a href="https://github.com" target="_blank" rel="noopener" class="social-link" title="GitHub"><i class="ri-github-fill"></i></a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener" class="social-link" title="LinkedIn"><i class="ri-linkedin-fill"></i></a>
+                <a href="mailto:sharma4uga@gmail.com" class="social-link" title="Email"><i class="ri-mail-line"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 Giresh Sharma Annavajhala. Hyderabad, India.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
