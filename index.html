@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
     <title>Giresh Sharma Annavajhala | Technical Lead &amp; Full-Stack Architect</title>
     <meta name="description" content="Technical Lead &amp; Architect with 13+ years delivering high-scale web applications, cybersecurity solutions, and enterprise SaaS. Specialized in Next.js, React, and BFF architectures. Based in Hyderabad, India.">
     <meta name="keywords" content="Technical Lead, Full Stack Engineer, React, Next.js, Node.js, Cybersecurity, BFF Architecture, Hyderabad">
@@ -745,6 +746,32 @@
             </div>
         </div>
     </footer>
+
+    <!-- Private Access Gate Overlay -->
+    <div class="access-gate-overlay" id="access-gate">
+        <div class="access-gate-card glass-card text-center">
+            <div class="access-gate-icon">
+                <i class="ri-lock-password-line"></i>
+            </div>
+            <h2>Private Portfolio Access</h2>
+            <p>This profile is restricted for authorized reviewers. Enter access passcode to continue.</p>
+            <form id="access-gate-form" onsubmit="event.preventDefault(); submitPasscode();">
+                <div class="form-group" style="margin-bottom: 1rem;">
+                    <input type="password" id="gate-passcode-input" class="form-control text-center" placeholder="Enter Access Passcode" required autofocus style="text-align: center; font-size: 1.1rem; letter-spacing: 2px;">
+                </div>
+                <div class="gate-error-msg hidden" id="gate-error" style="color: var(--accent-rose); font-size: 0.85rem; margin-bottom: 1rem; display: flex; align-items: center; justify-content: center; gap: 0.4rem;">
+                    <i class="ri-error-warning-line"></i> Incorrect passcode. Please try again.
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">
+                    <span>Unlock Portfolio</span>
+                    <i class="ri-lock-unlock-line"></i>
+                </button>
+            </form>
+            <div class="gate-hint" style="margin-top: 1.25rem; font-size: 0.78rem; color: var(--text-dim);">
+                <span>Passcode required or use direct access link</span>
+            </div>
+        </div>
+    </div>
 
     <script src="app.js"></script>
 </body>

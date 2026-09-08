@@ -3,6 +3,7 @@
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
+    initAccessGate();
     initCanvasBackground();
     initTypingEffect();
     initTimezoneClock();
@@ -695,3 +696,45 @@ function initThemeToggle() {
         localStorage.setItem('portfolio-theme', nextTheme);
     });
 }
+
+/* ==========================================================================
+   11. Private Access Gate Logic
+   ========================================================================== */
+const PASSCODE = '2026';
+const SECRET_KEYS = ['2026', 'key', 'access', 'private', 'giresh'];
+
+function initAccessGate() {
+    const gate = document.getElementById('access-gate');
+    if (!gate) return;
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const paramAccess = urlParams.get('access') || urlParams.get('passcode') || urlParams.get('key');
+
+    const isSessionUnlocked = sessionStorage.getItem('portfolio_unlocked') === 'true';
+
+    if (isSessionUnlocked || (paramAccess && (paramAccess === PASSCODE || SECRET_KEYS.includes(paramAccess.toLowerCase())))) {
+        sessionStorage.setItem('portfolio_unlocked', 'true');
+        gate.classList.add('unlocked');
+    }
+}
+
+function submitPasscode() {
+    const input = document.getElementById('gate-passcode-input');
+    const gate = document.getElementById('access-gate');
+    const errorMsg = document.getElementById('gate-error');
+
+    if (!input || !gate) return;
+
+    const val = input.value.trim();
+
+    if (val === PASSCODE || val.toLowerCase() === 'giresh') {
+        sessionStorage.setItem('portfolio_unlocked', 'true');
+        gate.classList.add('unlocked');
+        if (errorMsg) errorMsg.classList.add('hidden');
+    } else {
+        if (errorMsg) errorMsg.classList.remove('hidden');
+        input.value = '';
+        input.focus();
+    }
+}
+
