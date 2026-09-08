@@ -170,18 +170,25 @@ function initTimezoneClock() {
    4. Skills Grid & Category Tabs
    ========================================================================== */
 const skillData = [
-    { name: 'React / Next.js', category: 'frontend', level: 'Expert (7 yrs)', pct: 95, icon: 'ri-reactjs-line' },
-    { name: 'TypeScript / ES6+', category: 'frontend', level: 'Expert (6 yrs)', pct: 92, icon: 'ri-code-s-slash-line' },
-    { name: 'NestJS / Node.js', category: 'backend', level: 'Senior (6 yrs)', pct: 92, icon: 'ri-server-line' },
-    { name: 'Python / FastAPI', category: 'backend', level: 'Advanced (5 yrs)', pct: 88, icon: 'ri-terminal-window-line' },
-    { name: 'PostgreSQL & MySQL', category: 'backend', level: 'Advanced (6 yrs)', pct: 90, icon: 'ri-database-2-line' },
-    { name: 'Three.js & WebGL', category: 'frontend', level: 'Specialist (3 yrs)', pct: 86, icon: 'ri-shape-line' },
-    { name: 'React Native & Expo', category: 'frontend', level: 'Advanced (4 yrs)', pct: 88, icon: 'ri-smartphone-line' },
-    { name: 'Docker & Kubernetes', category: 'cloud', level: 'Advanced (4 yrs)', pct: 84, icon: 'ri-instance-line' },
-    { name: 'Firebase & Supabase', category: 'backend', level: 'Senior (5 yrs)', pct: 90, icon: 'ri-fire-line' },
-    { name: 'RSA Encryption & Security', category: 'remote', level: 'Specialist (4 yrs)', pct: 87, icon: 'ri-shield-keyhole-line' },
-    { name: 'Algolia Instant Search', category: 'backend', level: 'Advanced (3 yrs)', pct: 85, icon: 'ri-search-eye-line' },
-    { name: 'Turborepo Monorepos', category: 'cloud', level: 'Advanced (3 yrs)', pct: 88, icon: 'ri-folders-line' }
+    // Core Resume Skills
+    { name: 'ReactJS & Next.js', category: 'frontend', level: 'Core Stack (13+ yrs)', pct: 96, icon: 'ri-reactjs-line' },
+    { name: 'JavaScript & TypeScript', category: 'frontend', level: 'Core Stack (13+ yrs)', pct: 95, icon: 'ri-code-s-slash-line' },
+    { name: 'HTML5 & CSS3', category: 'frontend', level: 'Core Stack (13+ yrs)', pct: 95, icon: 'ri-html5-line' },
+    { name: 'Node.js & BFF Architecture', category: 'backend', level: 'Core Stack (13+ yrs)', pct: 94, icon: 'ri-server-line' },
+    { name: 'REST APIs & Java Integration', category: 'backend', level: 'Core Stack', pct: 90, icon: 'ri-links-line' },
+    { name: 'MySQL & Firebase', category: 'backend', level: 'Core Stack', pct: 90, icon: 'ri-database-2-line' },
+    { name: 'Cybersecurity & Extension Auditing', category: 'infra', level: 'Core Stack (Specialist)', pct: 92, icon: 'ri-shield-keyhole-line' },
+    { name: 'Adobe Experience Manager (AEM)', category: 'frontend', level: 'Core Stack (AEM Lead)', pct: 88, icon: 'ri-layout-3-line' },
+    { name: 'Tomcat Server Management', category: 'infra', level: 'Core Stack', pct: 86, icon: 'ri-cpu-line' },
+    { name: 'Git, Jira & Agile / Scrum', category: 'infra', level: 'Core Stack', pct: 94, icon: 'ri-git-branch-line' },
+    { name: 'Python', category: 'backend', level: 'Core Stack', pct: 87, icon: 'ri-terminal-window-line' },
+
+    // 0-to-1 Projects & Extended Tools
+    { name: 'Three.js & WebGL', category: 'zero-to-one', level: '0-to-1 Project', pct: 85, icon: 'ri-shape-line' },
+    { name: 'React Native & Expo', category: 'zero-to-one', level: '0-to-1 Project', pct: 88, icon: 'ri-smartphone-line' },
+    { name: 'Docker & Kubernetes', category: 'zero-to-one', level: '0-to-1 Infrastructure', pct: 84, icon: 'ri-instance-line' },
+    { name: 'Supabase & Algolia Search', category: 'zero-to-one', level: '0-to-1 Integration', pct: 85, icon: 'ri-search-eye-line' },
+    { name: 'Turborepo Monorepos', category: 'zero-to-one', level: '0-to-1 Architecture', pct: 86, icon: 'ri-folders-line' }
 ];
 
 function initSkillsGrid() {
@@ -551,7 +558,7 @@ function initEstimatorCalculator() {
             const contactSection = document.getElementById('contact');
 
             if (budgetInput) budgetInput.value = `$${cost} USD (${duration})`;
-            if (msgInput) msgInput.value = `Hi Alex, I estimated a ${projectType} project for approximately $${cost} USD. Let's discuss starting our remote collaboration!`;
+            if (msgInput) msgInput.value = `Hi Giresh, I estimated a ${projectType} project for approximately $${cost} USD. Let's discuss starting our remote collaboration!`;
 
             if (contactSection) contactSection.scrollIntoView({ behavior: 'smooth' });
             showToast('Estimate applied to contact form!');
