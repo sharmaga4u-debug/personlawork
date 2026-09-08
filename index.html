@@ -755,20 +755,20 @@
             </div>
             <h2>Private Portfolio Access</h2>
             <p>This profile is restricted for authorized reviewers. Enter access passcode to continue.</p>
-            <form id="access-gate-form" onsubmit="event.preventDefault(); submitPasscode();">
+            <form id="access-gate-form" action="javascript:void(0);" onsubmit="if(window.submitPasscode) window.submitPasscode(); return false;">
                 <div class="form-group" style="margin-bottom: 1rem;">
                     <input type="password" id="gate-passcode-input" class="form-control text-center" placeholder="Enter Access Passcode" required autofocus style="text-align: center; font-size: 1.1rem; letter-spacing: 2px;">
                 </div>
                 <div class="gate-error-msg hidden" id="gate-error" style="color: var(--accent-rose); font-size: 0.85rem; margin-bottom: 1rem; display: flex; align-items: center; justify-content: center; gap: 0.4rem;">
                     <i class="ri-error-warning-line"></i> Incorrect passcode. Please try again.
                 </div>
-                <button type="submit" class="btn btn-primary btn-block">
+                <button type="submit" id="gate-submit-btn" class="btn btn-primary btn-block" onclick="if(window.submitPasscode) window.submitPasscode();">
                     <span>Unlock Portfolio</span>
                     <i class="ri-lock-unlock-line"></i>
                 </button>
             </form>
             <div class="gate-hint" style="margin-top: 1.25rem; font-size: 0.78rem; color: var(--text-dim);">
-                <span>Passcode required or use direct access link</span>
+                <span>Default Passcode: <strong>2026</strong></span>
             </div>
         </div>
     </div>
