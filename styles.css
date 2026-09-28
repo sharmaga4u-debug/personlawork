@@ -1498,3 +1498,276 @@ h1, h2, h3, h4 {
     color: var(--accent-cyan);
 }
 
+/* ==========================================================================
+   Launch Pill (hero)
+   ========================================================================== */
+.launch-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.3rem 0.9rem 0.3rem 0.3rem;
+    margin-bottom: 1rem;
+    border-radius: var(--radius-full);
+    background: var(--bg-glass);
+    border: 1px solid var(--border-highlight);
+    color: var(--text-main);
+    font-size: 0.85rem;
+    text-decoration: none;
+    backdrop-filter: blur(12px);
+    transition: var(--transition);
+}
+.launch-pill:hover { box-shadow: var(--shadow-glow); }
+.launch-pill:hover i { transform: translateX(3px); }
+.launch-pill i { transition: transform 0.2s ease; color: var(--accent-cyan); }
+.launch-pill-tag {
+    padding: 0.15rem 0.6rem;
+    border-radius: var(--radius-full);
+    background: var(--gradient-primary);
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.72rem;
+    letter-spacing: 0.03em;
+}
+
+/* ==========================================================================
+   Featured Project (Kinnect)
+   ========================================================================== */
+.featured-project {
+    grid-column: 1 / -1;
+    position: relative;
+    isolation: isolate;
+    border-color: transparent;
+    background:
+        linear-gradient(var(--bg-card), var(--bg-card)) padding-box,
+        conic-gradient(from var(--angle, 0deg), var(--accent-cyan), var(--accent-violet), #ff4ecd, var(--accent-cyan)) border-box;
+    animation: border-spin 8s linear infinite;
+}
+.featured-project:hover { border-color: transparent; }
+.featured-project::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    border-radius: inherit;
+    background:
+        radial-gradient(600px circle at 85% 20%, rgba(127, 0, 255, 0.18), transparent 60%),
+        radial-gradient(500px circle at 10% 100%, rgba(0, 242, 254, 0.12), transparent 60%);
+    pointer-events: none;
+}
+@property --angle {
+    syntax: "<angle>";
+    inherits: false;
+    initial-value: 0deg;
+}
+@keyframes border-spin {
+    to { --angle: 360deg; }
+}
+
+.featured-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    align-items: center;
+}
+.featured-grid > * { min-width: 0; }
+.featured-project .project-content { padding: 2.5rem; }
+.featured-project .project-header h3 { font-size: 1.75rem; }
+
+.featured-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+.live-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.3rem 0.8rem;
+    border-radius: var(--radius-full);
+    background: rgba(16, 185, 129, 0.1);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    color: var(--accent-emerald);
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+.live-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--accent-emerald);
+    box-shadow: 0 0 10px var(--accent-emerald);
+    animation: live-pulse 1.6s ease-in-out infinite;
+}
+@keyframes live-pulse {
+    50% { opacity: 0.35; }
+}
+.featured-kicker {
+    font-family: var(--font-code);
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+}
+
+.featured-features {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.6rem 1rem;
+    margin-bottom: 1.25rem;
+    font-size: 0.875rem;
+    color: var(--text-muted);
+}
+.featured-features li { display: flex; align-items: center; gap: 0.5rem; }
+.featured-features i { color: var(--accent-cyan); font-size: 1rem; }
+
+.featured-ctas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+}
+
+/* Phone mockup */
+.featured-visual {
+    display: flex;
+    justify-content: center;
+    padding: 2.5rem 2rem;
+}
+.phone-mockup {
+    width: 250px;
+    padding: 9px;
+    border-radius: 38px;
+    background: #05070d;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    box-shadow: 0 30px 60px -15px rgba(127, 0, 255, 0.45), 0 0 0 1px rgba(0, 242, 254, 0.08);
+    animation: phone-float 6s ease-in-out infinite;
+    color: #e2e8f0;
+}
+@keyframes phone-float {
+    50% { transform: translateY(-12px) rotate(-1deg); }
+}
+.phone-screen {
+    border-radius: 30px;
+    overflow: hidden;
+    background: linear-gradient(180deg, #111827 0%, #05070d 100%);
+    font-size: 0.72rem;
+}
+.phone-header {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 1.1rem 0.9rem 0.7rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+.phone-header > i { margin-left: auto; font-size: 1rem; color: var(--accent-cyan); }
+.phone-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: linear-gradient(135deg, #fcd34d, #fb7185);
+    font-size: 0.95rem;
+}
+.phone-title strong { display: block; font-size: 0.8rem; color: #fff; }
+.phone-title span { color: var(--accent-emerald); font-size: 0.65rem; }
+.phone-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.9rem 0.7rem;
+}
+.bubble {
+    max-width: 82%;
+    padding: 0.5rem 0.7rem;
+    border-radius: 16px;
+    line-height: 1.4;
+}
+.bubble small { display: block; font-size: 0.62rem; color: #fcd34d; margin-bottom: 0.1rem; }
+.bubble em { display: block; font-size: 0.62rem; color: #94a3b8; margin-top: 0.2rem; }
+.bubble-in { align-self: flex-start; background: rgba(255, 255, 255, 0.08); border-top-left-radius: 4px; }
+.bubble-out {
+    align-self: flex-end;
+    background: linear-gradient(135deg, #4facfe, #7f00ff);
+    color: #fff;
+    border-top-right-radius: 4px;
+}
+.bubble.poll { width: 82%; border: 1px solid rgba(255, 255, 255, 0.08); }
+.bubble.poll small { color: var(--accent-cyan); }
+.poll-row {
+    position: relative;
+    height: 20px;
+    margin-top: 0.35rem;
+    border-radius: 6px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.05);
+}
+.poll-row span { position: absolute; inset: 0 auto 0 0; background: rgba(0, 242, 254, 0.25); }
+.poll-row b { position: relative; padding: 0 0.5rem; font-weight: 500; font-size: 0.62rem; line-height: 20px; }
+.checkin-chip {
+    align-self: center;
+    padding: 0.25rem 0.7rem;
+    border-radius: var(--radius-full);
+    background: rgba(16, 185, 129, 0.12);
+    color: #6ee7b7;
+    font-size: 0.62rem;
+}
+.phone-composer {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.7rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+.phone-composer span {
+    flex: 1;
+    padding: 0.45rem 0.8rem;
+    border-radius: var(--radius-full);
+    background: rgba(255, 255, 255, 0.06);
+    color: #64748b;
+}
+.phone-composer i {
+    width: 30px;
+    height: 30px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--accent-violet);
+    color: #fff;
+}
+
+@media (max-width: 992px) {
+    .featured-grid { grid-template-columns: 1fr; }
+    .featured-visual { order: -1; padding-bottom: 0; }
+    .featured-project .project-content { text-align: left; }
+}
+@media (max-width: 768px) {
+    .featured-project .project-content { padding: 1.5rem; }
+    .featured-project .project-header h3 { font-size: 1.35rem; }
+    .featured-features { grid-template-columns: 1fr; }
+    .launch-pill { font-size: 0.78rem; }
+}
+
+/* ==========================================================================
+   Scroll Reveal
+   ========================================================================== */
+.reveal {
+    opacity: 0;
+    translate: 0 28px;
+    filter: blur(6px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), translate 0.8s cubic-bezier(0.16, 1, 0.3, 1), filter 0.8s ease,
+        transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+.reveal.in-view {
+    opacity: 1;
+    translate: 0 0;
+    filter: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1; translate: none; filter: none; transition: none; }
+    .featured-project, .phone-mockup, .live-dot { animation: none; }
+}
+

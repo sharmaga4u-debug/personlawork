@@ -72,6 +72,11 @@
         <section class="hero-section" id="hero">
             <div class="container hero-grid">
                 <div class="hero-content">
+                    <a href="#projects" class="launch-pill">
+                        <span class="launch-pill-tag">New</span>
+                        <span>Kinnect &mdash; my encrypted family chat app is live</span>
+                        <i class="ri-arrow-right-line"></i>
+                    </a>
                     <div class="availability-badge">
                         <span class="status-indicator online"></span>
                         <span>Available for Remote Roles & Contracts</span>
@@ -225,12 +230,13 @@
                 <div class="section-header text-center">
                     <span class="section-tag"><i class="ri-briefcase-line"></i> Selected Work</span>
                     <h2 class="section-title">Delivered <span class="gradient-text">Production Projects</span></h2>
-                    <p class="section-subtitle">Real-world applications engineered across Travel, 3D WebGL, Healthcare, Cryptographic Voting, Sports Tech, HR SaaS, and PropTech.</p>
+                    <p class="section-subtitle">Real-world applications engineered across Encrypted Messaging, Travel, 3D WebGL, Healthcare, Cryptographic Voting, Sports Tech, HR SaaS, and PropTech.</p>
                 </div>
 
                 <!-- Project Filter Buttons -->
                 <div class="tab-buttons" id="project-tabs">
-                    <button class="tab-btn active" data-filter="all">All Projects (9)</button>
+                    <button class="tab-btn active" data-filter="all">All Projects (10)</button>
+                    <button class="tab-btn" data-filter="latest">&#10022; Latest Launch</button>
                     <button class="tab-btn" data-filter="travel">Travel & Aviation</button>
                     <button class="tab-btn" data-filter="enterprise">SaaS & Enterprise</button>
                     <button class="tab-btn" data-filter="mobile-health">Healthcare & Mobile</button>
@@ -238,6 +244,88 @@
                 </div>
 
                 <div class="grid grid-2 portfolio-grid" id="portfolio-grid">
+                    <!-- Project 10 (Featured): Kinnect -->
+                    <div class="project-card glass-card featured-project" data-category="latest mobile-health" data-project="10">
+                        <div class="featured-grid">
+                            <div class="project-content">
+                                <div class="featured-meta">
+                                    <span class="live-badge"><span class="live-dot"></span> Latest Launch &middot; Live</span>
+                                    <span class="featured-kicker">Messaging &middot; Mobile &middot; Web</span>
+                                </div>
+                                <div class="project-header">
+                                    <h3>Kinnect &mdash; Private Family Chat</h3>
+                                    <div class="project-links">
+                                        <a href="https://sharmaga4u-debug.github.io/kinnect/" target="_blank" rel="noopener" class="icon-link" title="Open Live App"><i class="ri-external-link-line"></i></a>
+                                    </div>
+                                </div>
+                                <p class="project-desc">An end-to-end encrypted messenger built 0-to-1 for families across generations and time zones: chats, group video calls with games to play together, and care features like medicine reminders, daily &ldquo;I&rsquo;m OK&rdquo; check-ins and SOS. On-device AI translation, running entirely on free infrastructure.</p>
+                                <ul class="featured-features">
+                                    <li><i class="ri-lock-2-line"></i> End-to-end encrypted chats &amp; calls</li>
+                                    <li><i class="ri-vidicon-line"></i> Group video calls (up to 4)</li>
+                                    <li><i class="ri-gamepad-line"></i> Draw, games &amp; Watch Together</li>
+                                    <li><i class="ri-translate-2"></i> On-device translation, 8 languages</li>
+                                    <li><i class="ri-capsule-line"></i> Medicine reminders &amp; SOS</li>
+                                    <li><i class="ri-user-heart-line"></i> Simple mode for grandparents</li>
+                                </ul>
+                                <div class="project-stats">
+                                    <div><strong>E2E</strong> <span>Encrypted</span></div>
+                                    <div><strong>$0</strong> <span>Infra Cost</span></div>
+                                    <div><strong>110+</strong> <span>Automated Checks</span></div>
+                                </div>
+                                <div class="project-tags">
+                                    <span class="tag">React 19</span>
+                                    <span class="tag">Capacitor</span>
+                                    <span class="tag">WebRTC</span>
+                                    <span class="tag">PeerJS</span>
+                                    <span class="tag">MQTT</span>
+                                    <span class="tag">ML Kit</span>
+                                    <span class="tag">Tailwind CSS</span>
+                                    <span class="tag">Android</span>
+                                </div>
+                                <div class="featured-ctas">
+                                    <a href="https://sharmaga4u-debug.github.io/kinnect/" target="_blank" rel="noopener" class="btn btn-primary btn-sm">
+                                        <span>Try Kinnect</span>
+                                        <i class="ri-arrow-right-up-line"></i>
+                                    </a>
+                                    <button class="btn btn-outline btn-sm view-details-btn">View Architecture &amp; Metrics</button>
+                                </div>
+                            </div>
+
+                            <div class="featured-visual" aria-hidden="true">
+                                <div class="phone-mockup">
+                                    <div class="phone-screen">
+                                        <div class="phone-header">
+                                            <div class="phone-avatar">&#128106;</div>
+                                            <div class="phone-title">
+                                                <strong>Family</strong>
+                                                <span>Dadi is typing&hellip;</span>
+                                            </div>
+                                            <i class="ri-vidicon-fill"></i>
+                                        </div>
+                                        <div class="phone-body">
+                                            <div class="bubble bubble-in">
+                                                <small>Dadi</small>
+                                                नमस्ते बच्चों! &#128591;
+                                                <em>Hello kids! &middot; translated</em>
+                                            </div>
+                                            <div class="bubble bubble-out">Namaste Dadi! Video call tonight? &#10084;&#65039;</div>
+                                            <div class="bubble bubble-in poll">
+                                                <small>&#128202; Poll &middot; Sunday lunch?</small>
+                                                <div class="poll-row"><span style="width:75%"></span><b>Biryani &middot; 3</b></div>
+                                                <div class="poll-row"><span style="width:25%"></span><b>Dosa &middot; 1</b></div>
+                                            </div>
+                                            <div class="checkin-chip">&#9989; Papa checked in: &ldquo;I&rsquo;m OK&rdquo;</div>
+                                        </div>
+                                        <div class="phone-composer">
+                                            <span>Message</span>
+                                            <i class="ri-mic-fill"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     <!-- Project 1: B2C Travel Startup -->
                     <div class="project-card glass-card" data-category="travel" data-project="1">
                         <div class="project-img-wrapper">

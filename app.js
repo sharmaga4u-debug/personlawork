@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initTerminalCLI();
     initThemeToggle();
     initModalEvents();
+    initScrollReveal();
 });
 
 /* ==========================================================================
@@ -189,7 +190,9 @@ const skillData = [
     { name: 'React Native & Expo', category: 'zero-to-one', level: '0-to-1 Project', pct: 88, icon: 'ri-smartphone-line' },
     { name: 'Docker & Kubernetes', category: 'zero-to-one', level: '0-to-1 Infrastructure', pct: 84, icon: 'ri-instance-line' },
     { name: 'Supabase & Algolia Search', category: 'zero-to-one', level: '0-to-1 Integration', pct: 85, icon: 'ri-search-eye-line' },
-    { name: 'Turborepo Monorepos', category: 'zero-to-one', level: '0-to-1 Architecture', pct: 86, icon: 'ri-folders-line' }
+    { name: 'Turborepo Monorepos', category: 'zero-to-one', level: '0-to-1 Architecture', pct: 86, icon: 'ri-folders-line' },
+    { name: 'WebRTC & Real-time Messaging', category: 'zero-to-one', level: '0-to-1 Project (Kinnect)', pct: 88, icon: 'ri-chat-voice-line' },
+    { name: 'Capacitor & On-device AI', category: 'zero-to-one', level: '0-to-1 Project (Kinnect)', pct: 86, icon: 'ri-robot-2-line' }
 ];
 
 function initSkillsGrid() {
@@ -391,6 +394,25 @@ const projectDetails = {
             "Implemented encrypted voting system for resident association budget approvals and community decisions.",
             "Designed financial analytics dashboard tracking monthly dues collection, overdue alerts, and expense telemetry."
         ]
+    },
+    "10": {
+        title: "Kinnect - Private, Family-First Chat App",
+        badge: "Latest Launch · Encrypted Messaging",
+        img: "",
+        liveUrl: "https://sharmaga4u-debug.github.io/kinnect/",
+        overview: "An end-to-end encrypted messenger built from scratch for families spread across generations and time zones. It combines everyday messaging and group video calls with shared activities and family-care features, running entirely on free infrastructure (public MQTT relay, PeerJS, GitHub Pages) with on-device ML Kit translation.",
+        metrics: [
+            { title: "Encryption", val: "End-to-End" },
+            { title: "Infrastructure Cost", val: "$0" },
+            { title: "Automated Checks", val: "110+" }
+        ],
+        stack: ["React 19", "Capacitor", "WebRTC", "PeerJS", "MQTT", "ML Kit", "Tailwind CSS", "Android"],
+        highlights: [
+            "Encrypted chats, photos, voice notes, polls and call signalling, with large payloads chunked to fit the free relay's ~250 KB limit.",
+            "1:1 and group video calls with shared activities: Draw Together, Tic-Tac-Toe, Snakes & Ladders and synced Watch Together.",
+            "Care features: daily \"I'm OK\" check-ins, medicine reminders with a caregiver log, SOS with location, time-zone-aware call scheduling.",
+            "On-device translation across 8 Indian languages, a simple mode for grandparents, and password-encrypted backup & restore."
+        ]
     }
 };
 
@@ -408,7 +430,7 @@ function initPortfolioFilters() {
             const cards = grid.querySelectorAll('.project-card');
 
             cards.forEach(card => {
-                if (filter === 'all' || card.dataset.category === filter) {
+                if (filter === 'all' || card.dataset.category.split(' ').includes(filter)) {
                     card.style.display = 'flex';
                 } else {
                     card.style.display = 'none';
@@ -439,7 +461,7 @@ function openProjectModal(projId) {
             <span class="project-badge" style="position:static; display:inline-block; margin-bottom:0.75rem;">${data.badge}</span>
             <h2 style="font-size: 1.75rem; font-weight:800; margin-bottom: 0.5rem;">${data.title}</h2>
         </div>
-        <img src="${data.img}" alt="${data.title}" style="width:100%; max-height:300px; object-fit:cover; border-radius:var(--radius-md); margin-bottom:1.5rem; border:1px solid var(--border-color);">
+        ${data.img ? `<img src="${data.img}" alt="${data.title}" style="width:100%; max-height:300px; object-fit:cover; border-radius:var(--radius-md); margin-bottom:1.5rem; border:1px solid var(--border-color);">` : ''}
         
         <p style="color:var(--text-muted); font-size:1rem; margin-bottom:1.5rem; line-height:1.6;">${data.overview}</p>
 
@@ -461,7 +483,8 @@ function openProjectModal(projId) {
             ${data.stack.map(s => `<span class="tag">${s}</span>`).join('')}
         </div>
 
-        <div style="display:flex; gap:1rem;">
+        <div style="display:flex; flex-wrap:wrap; gap:1rem;">
+            ${data.liveUrl ? `<a href="${data.liveUrl}" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Open Live App <i class="ri-arrow-right-up-line"></i></a>` : ''}
             <a href="#contact" onclick="closeModal();" class="btn btn-primary btn-sm">Hire Me for Similar Project</a>
             <button onclick="closeModal();" class="btn btn-outline btn-sm">Close</button>
         </div>
@@ -607,7 +630,7 @@ function initTerminalCLI() {
         'help': 'Available commands: <br> • <span class="text-amber">skills</span> - List core stack & framework experience<br> • <span class="text-amber">projects</span> - Display featured portfolio apps<br> • <span class="text-amber">hire</span> - Open remote contract request prompt<br> • <span class="text-amber">contact</span> - Show email & social links<br> • <span class="text-amber">whoami</span> - Display remote developer info<br> • <span class="text-amber">clear</span> - Clear terminal buffer',
         'whoami': '<span class="text-cyan">Technical Lead & Full-Stack Architect</span> | Cognizant Technology Solutions<br>Location: Hyderabad, India (Open to Global Remote Roles)<br>13+ Years Engineering Exp. BFF Architecture, Next.js, React, Cybersecurity.',
         'skills': '<b>Core Tech Stack:</b><br> • Frontend: ReactJS, Next.js, TypeScript, HTML5, CSS3, JavaScript<br> • Backend: Node.js, BFF Architecture, REST APIs<br> • Database: MySQL, Firebase<br> • Tools: Jira, Git, Agile, Tomcat Server<br> • Security: Chrome Web Store Threat Prevention, Cybersecurity Auditing',
-        'projects': '<b>Production Projects (Real-Time Experience):</b><br> 1. <span class="text-cyan">Fresenius Health Care Integration</span> – Enterprise Healthcare Platform (Next.js/AEM/BFF)<br> 2. <span class="text-cyan">Cybersecurity Initiative</span> – Chrome Extension Vulnerability Assessment<br> 3. <span class="text-cyan">B2C Travel Booking Engine</span> – Multi-Modal Travel Platform (NestJS/K8s)<br> 4. <span class="text-cyan">Cymax 3D Platform</span> – Real-Time Collaborative 3D Viewer (Three.js)<br> 5. <span class="text-cyan">Private Jet Fleet Manager</span> – Aviation Dashboard (FastAPI/React)<br> 6. <span class="text-cyan">PharmaTrack</span> – Medication FEFO Inventory App (React Native)<br> 7. <span class="text-cyan">Election Manager</span> – RSA-Encrypted Digital Voting<br> 8. <span class="text-cyan">Matha Software</span> – Multi-Lingual Scheduling System<br> 9. <span class="text-cyan">Tournament Manager & Sport-Split</span> – Sports & Expense Platform',
+        'projects': '<b>Production Projects (Real-Time Experience):</b><br> ✦ <span class="text-cyan">Kinnect</span> – Encrypted Family Chat App, latest launch (React/WebRTC/Capacitor)<br> 1. <span class="text-cyan">Fresenius Health Care Integration</span> – Enterprise Healthcare Platform (Next.js/AEM/BFF)<br> 2. <span class="text-cyan">Cybersecurity Initiative</span> – Chrome Extension Vulnerability Assessment<br> 3. <span class="text-cyan">B2C Travel Booking Engine</span> – Multi-Modal Travel Platform (NestJS/K8s)<br> 4. <span class="text-cyan">Cymax 3D Platform</span> – Real-Time Collaborative 3D Viewer (Three.js)<br> 5. <span class="text-cyan">Private Jet Fleet Manager</span> – Aviation Dashboard (FastAPI/React)<br> 6. <span class="text-cyan">PharmaTrack</span> – Medication FEFO Inventory App (React Native)<br> 7. <span class="text-cyan">Election Manager</span> – RSA-Encrypted Digital Voting<br> 8. <span class="text-cyan">Matha Software</span> – Multi-Lingual Scheduling System<br> 9. <span class="text-cyan">Tournament Manager & Sport-Split</span> – Sports & Expense Platform',
         'contact': 'Email: <a href="mailto:sharma4uga@gmail.com" class="text-cyan">sharma4uga@gmail.com</a><br>Phone: <span class="text-cyan">+91-8121303545</span><br>Location: Hyderabad, India<br>LinkedIn: <a href="https://linkedin.com" target="_blank" class="text-cyan">linkedin.com/in/giresh-sharma</a>',
         'hire': '<span class="text-emerald">Ready to connect!</span> Reach out via the Standard Form above or email directly at <span class="text-cyan">sharma4uga@gmail.com</span>.'
     };
@@ -763,3 +786,24 @@ function submitPasscode() {
     }
 }
 
+/* ==========================================================================
+   12. Scroll Reveal Animations
+   ========================================================================== */
+function initScrollReveal() {
+    if (!('IntersectionObserver' in window)) return;
+    const targets = document.querySelectorAll('.section-header, .feature-card, .project-card, .timeline-item, .contact-wrapper');
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('in-view');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+    targets.forEach(el => {
+        el.classList.add('reveal');
+        observer.observe(el);
+    });
+}
