@@ -4,7 +4,6 @@
 
 document.addEventListener('DOMContentLoaded', () => {
     initAccessGate();
-    initCanvasBackground();
     initTypingEffect();
     initTimezoneClock();
     initSkillsGrid();
@@ -712,11 +711,32 @@ function initThemeToggle() {
     document.documentElement.setAttribute('data-theme', savedTheme);
 
     toggleBtn.addEventListener('click', () => {
-        const currentTheme = document.documentElement.getAttribute('data-theme');
-        const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        const applyTheme = () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
 
-        document.documentElement.setAttribute('data-theme', nextTheme);
-        localStorage.setItem('portfolio-theme', nextTheme);
+            document.documentElement.setAttribute('data-theme', nextTheme);
+            localStorage.setItem('portfolio-theme', nextTheme);
+        };
+
+        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (!document.startViewTransition || reduceMotion) {
+            applyTheme();
+            return;
+        }
+
+        // Circular reveal expanding from the toggle button
+        const rect = toggleBtn.getBoundingClientRect();
+        const x = rect.left + rect.width / 2;
+        const y = rect.top + rect.height / 2;
+        const radius = Math.hypot(Math.max(x, window.innerWidth - x), Math.max(y, window.innerHeight - y));
+
+        document.startViewTransition(applyTheme).ready.then(() => {
+            document.documentElement.animate(
+                { clipPath: [`circle(0px at ${x}px ${y}px)`, `circle(${radius}px at ${x}px ${y}px)`] },
+                { duration: 750, easing: 'cubic-bezier(0.65, 0, 0.35, 1)', pseudoElement: '::view-transition-new(root)' }
+            );
+        });
     });
 }
 
@@ -756,15 +776,26 @@ function initAccessGate() {
     }
 }
 
-function unlockGate(gate) {
+function unlockGate(gate, animate) {
     if (!gate) gate = document.getElementById('access-gate');
     if (!gate) return;
 
     try { sessionStorage.setItem('portfolio_unlocked', 'true'); } catch (e) {}
-    gate.classList.add('unlocked');
-    gate.classList.add('hidden');
-    gate.style.display = 'none';
     document.body.style.overflow = '';
+
+    const finish = () => {
+        gate.classList.add('unlocked');
+        gate.classList.add('hidden');
+        gate.style.display = 'none';
+    };
+
+    if (animate && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        gate.classList.add('gate-leaving');
+        setTimeout(finish, 700);
+    } else {
+        finish();
+    }
+    document.dispatchEvent(new Event('portfolio:unlocked'));
 }
 
 function submitPasscode() {
@@ -777,7 +808,8 @@ function submitPasscode() {
     const val = input.value.trim();
 
     if (val === PASSCODE || val.toLowerCase() === 'giresh' || val.toLowerCase() === 'admin' || val.length > 0) {
-        unlockGate(gate);
+        if (gate.classList.contains('gate-leaving')) return;
+        unlockGate(gate, true);
         if (errorMsg) errorMsg.classList.add('hidden');
     } else {
         if (errorMsg) errorMsg.classList.remove('hidden');

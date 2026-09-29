@@ -23,11 +23,18 @@
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
     
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="fx.css">
+    <script>
+        document.documentElement.classList.add('fx-js');
+        window.__fxFailsafe = setTimeout(function () { document.documentElement.classList.add('fx-intro'); }, 6000);
+    </script>
 </head>
 <body>
 
-    <!-- Dynamic Canvas Background -->
+    <!-- Dynamic Backgrounds: WebGL aurora (fx.js) with particle canvas fallback -->
+    <canvas id="gl-bg" aria-hidden="true"></canvas>
     <canvas id="bg-canvas"></canvas>
+    <div class="fx-grain" aria-hidden="true"></div>
 
     <!-- Navigation -->
     <header class="navbar" id="navbar">
@@ -47,6 +54,12 @@
             </nav>
 
             <div class="nav-actions">
+                <!-- Command Palette Trigger -->
+                <button class="cmdk-trigger" id="cmdk-trigger" aria-label="Open command menu" title="Search the portfolio">
+                    <i class="ri-search-line"></i>
+                    <kbd id="cmdk-kbd">Ctrl K</kbd>
+                </button>
+
                 <!-- Timezone Bar -->
                 <div class="tz-widget" title="Current Time in Remote Work Zones">
                     <i class="ri-global-line"></i>
@@ -129,6 +142,13 @@
                 </div>
 
                 <div class="hero-visual">
+                    <div class="avatar-orbit" aria-hidden="true">
+                        <span style="--a: 0deg"><i class="ri-reactjs-line"></i></span>
+                        <span style="--a: 72deg"><i class="ri-shield-keyhole-line"></i></span>
+                        <span style="--a: 144deg"><i class="ri-database-2-line"></i></span>
+                        <span style="--a: 216deg"><i class="ri-code-s-slash-line"></i></span>
+                        <span style="--a: 288deg"><i class="ri-cloud-line"></i></span>
+                    </div>
                     <div class="avatar-card glass-card">
                         <div class="avatar-glow"></div>
                         <img src="assets/avatar.jpg" alt="Giresh Sharma Annavajhala - Technical Lead" class="avatar-img">
@@ -150,6 +170,9 @@
                 </div>
             </div>
         </section>
+
+        <!-- Tech Marquee Band (populated by fx.js) -->
+        <div class="fx-marquee" id="fx-marquee" aria-hidden="true"></div>
 
         <!-- Remote Readiness & About Section -->
         <section class="section about-section" id="about">
@@ -828,6 +851,7 @@
                 <a href="mailto:sharma4uga@gmail.com" class="social-link" title="Email"><i class="ri-mail-line"></i></a>
             </div>
         </div>
+        <div class="footer-mega" data-text="Giresh.dev" aria-hidden="true">Giresh.dev</div>
         <div class="footer-bottom">
             <div class="container">
                 <p>&copy; 2026 Giresh Sharma Annavajhala. Hyderabad, India.</p>
@@ -862,5 +886,6 @@
     </div>
 
     <script src="app.js"></script>
+    <script src="fx.js"></script>
 </body>
 </html>
